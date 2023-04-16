@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>JavaScript Example</title>
+	<script>
+		var marks = [65, 70, 80, 55, 90, 75, 85, 95, 60, 50];
+
+		function findAverageMark() {
+			var sum = 0;
+			for (var i = 0; i < marks.length; i++) {
+				sum += marks[i];
+			}
+			var average = sum / marks.length;
+			return average;
+		}
+		function findMinMaxMarks() {
+			var min = marks[0];
+			var max = marks[0];
+			for (var i = 1; i < marks.length; i++) {
+				if (marks[i] < min) {
+					min = marks[i];
+				}
+				if (marks[i] > max) {
+					max = marks[i];
+				}
+			}
+			return {min: min, max: max};
+		}
+	</script>
+</head>
+<body>
+	<script>
+		document.write("Average Mark: " + findAverageMark() + "<br>");
+		var minMaxMarks = findMinMaxMarks();
+		document.write("Minimum Mark: " + minMaxMarks.min + "<br>");
+		document.write("Maximum Mark: " + minMaxMarks.max + "<br>");
+	</script>
+</body>
+</html>
