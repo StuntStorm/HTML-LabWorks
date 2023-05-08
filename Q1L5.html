@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>String Operations</title>
+  </head>
+  <body>
+    <p id="sentence">Rizwan AEIOU Test</p>
+    
+    <script>
+      const sentenceElement = document.getElementById("sentence");
+      
+      // Get the text content of the sentence element
+      const sentence = sentenceElement.textContent;
+      
+      // Find the length of the string
+      const length = sentence.length;
+      console.log("Length of string:", length);
+      
+      // Find the number of words in the sentence
+      const words = sentence.split(" ").length;
+      console.log("Number of words:", words);
+      
+      // Reverse the sentence
+      const reversed = sentence.split("").reverse().join("");
+      console.log("Reversed sentence:", reversed);
+      
+      // Find the number of vowels and consonants in the sentence
+      const vowels = sentence.match(/[aeiou]/gi).length;
+      const consonants = sentence.match(/[bcdfghjklmnpqrstvwxyz]/gi).length;
+      console.log("Vowels:", vowels);
+      console.log("Consonants:", consonants);
+      
+      // find how many times the word is present in the sentence or not
+      const word = prompt("Enter a word:");
+      const count = sentence.match(new RegExp(word, "gi")).length;
+      console.log(`The word "${word}" appears ${count} times in the sentence.`);
+      
+      // Try to replace the character “i” in the sentence with “y”
+      const replaced = sentence.replace(/i/gi, "y");
+      console.log("Replaced sentence:", replaced);
+      
+      // Display the frequency of each character 
+      const frequency = {};
+      for (const char of sentence) {
+        frequency[char] = frequency[char] ? frequency[char] + 1 : 1;
+      }
+      console.log("Frequency of characters:", frequency);
+      
+      const duplicates = Object.entries(frequency)
+        .filter(([char, count]) => count > 1)
+        .map(([char, count]) => char);
+      console.log("Duplicate characters:", duplicates);
+    </script>
+  </body>
+</html>

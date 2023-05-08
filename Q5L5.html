@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Table Operations</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      
+      th, td {
+        border: 1px solid black;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Contact</th>
+          <th>Country</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+            
+        </tr>
+        <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>            
+        </tr>
+      </tbody>
+    </table>
+    
+    <button onclick="increaseBorder()">Increase Border</button>
+    <button onclick="changeBackgroundColor()">Change Background Color</button>
+    <button onclick="changeContentColor()">Change Content Color</button>
+    <button onclick="changeColumnNames()">Change Column Names</button>
+    
+    <script>
+      function increaseBorder() {
+        const table = document.querySelector("table");
+        const currentBorderWidth = parseInt(table.style.borderWidth) || 1;
+        const newBorderWidth = currentBorderWidth + 1;
+        table.style.borderWidth = newBorderWidth + "px";
+      }
+      
+      function changeBackgroundColor() {
+        const table = document.querySelector("table");
+        table.style.backgroundColor = "yellow";
+      }
+      
+      function changeContentColor() {
+        const tableData = document.querySelectorAll("td");
+        tableData.forEach(td => {
+          td.style.color = "blue";
+        });
+      }
+      
+      function changeColumnNames() {
+        const columnHeaders = document.querySelectorAll("th");
+        columnHeaders[0].textContent = "Column 1";
+        columnHeaders[1].textContent = "Column 2";
+        columnHeaders[2].textContent = "Column 3";
+      }
+    </script>
+  </body>
+</html>

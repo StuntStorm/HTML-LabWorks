@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Changing Paragraphs with JavaScript</title>
+    <style>
+      p {
+        padding: 10px;
+        border: 1px solid black;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Changing Paragraphs with JavaScript</h1>
+
+    <p id="paragraph1">This is the first paragraph.</p>
+
+    <p id="paragraph2">This is the second paragraph.</p>
+
+    <p id="paragraph3">This is the third paragraph.</p>
+
+    <script>
+
+      var para1 = document.getElementById("paragraph1");
+      para1.innerHTML = "This is the updated first paragraph.";
+      para1.style.backgroundColor = "yellow";
+
+      var para2 = document.getElementById("paragraph2");
+      para2.innerHTML = "This is the updated second paragraph.";
+      para2.style.backgroundColor = "green";
+
+      var para3 = document.getElementById("paragraph3");
+      para3.innerHTML = "This is the updated third paragraph.";
+      para3.style.backgroundColor = "blue";
+
+    
+      var paragraphs = document.getElementsByTagName("p");
+      for (var i = 0; i < paragraphs.length; i++) {
+        paragraphs[i].style.color = "white";
+      }
+    </script>
+  </body>
+</html>
